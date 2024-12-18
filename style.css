@@ -225,7 +225,7 @@ header{
     font-size: 128px;
     margin-left: 480px;
     margin-top: 305px;
-    padding-bottom: 303px;
+    margin-bottom: 303px;
 }
 
 .banner-eyes{
@@ -265,15 +265,19 @@ header{
 }
 
 .work {
-    background-image: url('img/Shine3.svg');
-    background-repeat: no-repeat;
     width: 100%;
-    left: -315px;
-    top: 977px;
+    margin-bottom: 135px;
+    position: relative;
+    overflow: visible;
 }
 
-.work-container{
-    margin-bottom: 135px;
+.shine-work{
+    width: 1168px;
+    height: 839px;
+    position: absolute;
+    top: 108px;
+    right: 553px;
+    z-index: -2;
 }
 
 .work-title{
@@ -282,7 +286,7 @@ header{
     font-family: "Comfortaa", serif;
     display: flex;
     justify-content: center;
-    padding-bottom: 78px;
+    margin-bottom: 78px;
 }
 
 .work-content{
@@ -324,15 +328,18 @@ header{
 } */
 
 .conf{
-    background-image: url('img/Shine\ 2.svg');
-    background-repeat: no-repeat;
-    background-position: 170px -140px;;
-    background-size: 1447px 808px;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 135px;
 }
 
-
-.conf-container{
-    margin-bottom: 135px;
+.shine-conf{
+    width: 1447px;
+    height: 808px;
+    position: absolute;
+    top: -146px;
+    right: -170px;
+    z-index: -2;
 }
 
 .conf-title{
@@ -341,7 +348,7 @@ header{
     font-family: "Comfortaa", serif;
     display: flex;
     justify-content: center;
-    padding-bottom: 78px;
+    margin-bottom: 78px;
 }
 
 .conf-text{
@@ -355,9 +362,6 @@ header{
 .about {
     background-image: url('img/Shine1.svg');
     background-repeat: no-repeat;
-}
-
-.about-container{
     margin-bottom: 135px;
 }
 
