@@ -50,9 +50,24 @@ document.getElementById('telegramAuthBtn').addEventListener('click', function() 
     window.location.href = url;  // Перенаправляем на Telegram бот
 });
 
-const menuToggle = document.getElementById('menuToggle');
-const menu = document.querySelector('.menu');
 
-menuToggle.addEventListener('click', function() {
-    menu.classList.toggle('open');
+// Получаем элементы
+const burgerBtn = document.querySelector('.burger-btn');
+const menu = document.querySelector('.menu');
+const closeButton = document.querySelector('.menu-close');
+
+// Открытие бургер-меню
+burgerBtn.addEventListener('click', function() {
+    menu.classList.add('active'); // Добавляем класс для показа меню
 });
+
+// Закрытие бургер-меню
+closeButton.addEventListener('click', function() {
+    menu.classList.remove('active'); // Убираем класс для скрытия меню
+});
+
+
+
+
+
+
