@@ -49,3 +49,10 @@ document.getElementById('telegramAuthBtn').addEventListener('click', function() 
     const url = 'https://t.me/Mood_auth_bot?start=auth';  // Замените на ссылку к вашему боту
     window.location.href = url;  // Перенаправляем на Telegram бот
 });
+
+const menuToggle = document.getElementById('menuToggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+});

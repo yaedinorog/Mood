@@ -20,18 +20,12 @@ a{
     color: inherit;
 }
 
-.main{
-    overflow-y: hidden;
-}
-
 .container{
-    max-width: 1372px;
-    margin: 0 auto;
+    max-width: 1350px;
 }
 
 header{
     position: fixed;
-    width: 100%;
     padding-top: 26px;
     padding-bottom: 30px;
     z-index: 1000;
@@ -399,7 +393,6 @@ header{
 }
 
 footer{
-    width: 100%;
     padding-top: 32px;
     padding-bottom: 26px;
     border-top: #535353 1px solid;
@@ -496,63 +489,3 @@ li{
     font-size: 20px;
 }
 
-@media (max-width: 1300px){
-
-    .header-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 230px;
-    }
-    
-    .logo{
-        display: flex;
-        flex-direction: row;
-    }
-    .logo-link{
-        display: flex;
-        flex-direction: row;
-    }
-    .logo-img{
-        width: 34.94px;
-        height: 33.05px;
-        padding-right: 4px;
-    }
-    .logo-text{
-        color: white;
-        font-weight: bold;
-        font-size: 32px;
-        font-family: "Comfortaa", serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-    }
-    
-    .menu{
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 24px;
-    }
-    
-    .menu-item{
-        font-family: "Comfortaa", serif;
-        font-weight: 400;
-        font-size: 20px;
-        cursor: pointer;
-    }
-    
-    .btn{
-        animation: animBUT 5s infinite;
-        background-color: #136DFF;
-        border-radius: 50px;
-        color: white;
-        padding: 7px 25px;
-        border: 0;
-        font-family: "Comfortaa", serif;
-        font-weight: 400;
-        font-size: 18px;
-        cursor: pointer;
-    }
-}
