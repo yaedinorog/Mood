@@ -46,6 +46,6 @@ window.onclick = function(event) {
 
 document.getElementById('telegramAuthBtn').addEventListener('click', function() {
     // При нажатии, автоматически инициируем авторизацию через Telegram
-    const url = 'https://t.me/your_bot_username?start=auth';  // Замените на ссылку к вашему боту
+    const url = 'https://t.me/Mood_auth_bot?start=auth';  // Замените на ссылку к вашему боту
     window.location.href = url;  // Перенаправляем на Telegram бот
 });
