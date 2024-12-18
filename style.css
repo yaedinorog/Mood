@@ -20,6 +20,10 @@ a{
     color: inherit;
 }
 
+.main{
+    overflow-y: hidden;
+}
+
 .container{
     max-width: 1372px;
     margin: 0 auto;
@@ -275,8 +279,8 @@ header{
     width: 1168px;
     height: 839px;
     position: absolute;
-    top: 108px;
-    right: 553px;
+    top: 80px;
+    right: 453px;
     z-index: -2;
 }
 
@@ -360,9 +364,19 @@ header{
 }
 
 .about {
-    background-image: url('img/Shine1.svg');
-    background-repeat: no-repeat;
+    width: 100%;
     margin-bottom: 135px;
+    position: relative;
+    overflow: visible;
+}
+
+.shine-about{
+    width: 1437px;
+    height: 602px;
+    position: absolute;
+    top: -30px;
+    right: 254px;
+    z-index: -2;
 }
 
 .about-title{
@@ -389,6 +403,8 @@ footer{
     padding-top: 32px;
     padding-bottom: 26px;
     border-top: #535353 1px solid;
+    position: relative;
+    overflow: visible;
 }
 
 .footer-container{
@@ -416,6 +432,8 @@ footer{
 .footer-social{
     cursor: pointer;
 }
+
+/* стриницы футера */
 
 .main-container{
     max-width: 1176px;
@@ -476,4 +494,65 @@ li{
     font-family: "Comfortaa", serif;
     font-weight: 400;
     font-size: 20px;
+}
+
+@media (max-width: 1300px){
+
+    .header-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 230px;
+    }
+    
+    .logo{
+        display: flex;
+        flex-direction: row;
+    }
+    .logo-link{
+        display: flex;
+        flex-direction: row;
+    }
+    .logo-img{
+        width: 34.94px;
+        height: 33.05px;
+        padding-right: 4px;
+    }
+    .logo-text{
+        color: white;
+        font-weight: bold;
+        font-size: 32px;
+        font-family: "Comfortaa", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    .menu{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 24px;
+    }
+    
+    .menu-item{
+        font-family: "Comfortaa", serif;
+        font-weight: 400;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    .btn{
+        animation: animBUT 5s infinite;
+        background-color: #136DFF;
+        border-radius: 50px;
+        color: white;
+        padding: 7px 25px;
+        border: 0;
+        font-family: "Comfortaa", serif;
+        font-weight: 400;
+        font-size: 18px;
+        cursor: pointer;
+    }
 }
