@@ -20,6 +20,10 @@ a{
     color: inherit;
 }
 
+.main{
+    overflow-y: hidden;
+}
+
 .container{
     max-width: 1372px;
     margin: 0 auto;
@@ -34,12 +38,13 @@ header{
     transition: background-color 1s, color 1s;
 }
 
-.header-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    gap: 24px;
     align-items: center;
-    gap: 266px;
+    justify-items: center;
+    margin: 0 auto; 
 }
 
 .logo{
@@ -114,10 +119,109 @@ header{
     }
 }
 
+header {
+    position: fixed;
+    width: 100%;
+    padding-top: 26px;
+    padding-bottom: 30px;
+    z-index: 1000;
+    transition: background-color 1s, color 1s;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-link {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-img {
+    width: 34.94px;
+    height: 33.05px;
+    padding-right: 4px;
+}
+
+.logo-text {
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+    font-family: "Comfortaa", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.burger-btn { 
+    background-color: transparent;
+    border: none;
+    padding: 11px 10px;
+    display: none; 
+    z-index: 1000; 
+}
+
+.burger-btn > span {
+    margin-bottom: 5px;
+    display: block;
+    height: 3px;
+    width: 20px;
+    background-color: #FFF;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%; 
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.menu.active {
+    right: 0;  
+}
+
+.menu-item {
+    font-family: "Comfortaa", serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9;
     left: 0;
     top: 0;
     width: 100%;
@@ -212,20 +316,37 @@ header{
 
 .banner{
     background-image: url('img/Shine-main.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-bottom: 76px;
+    padding-bottom: 31px;
 }
 
 .banner-container{
     margin-bottom: 55px;
 }
 
+.banner-title {
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+}
+
 .banner-title-text {
     font-family: "Comfortaa", serif;
     font-weight: bold;
     font-size: 128px;
-    margin-left: 480px;
-    margin-top: 305px;
-    padding-bottom: 303px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner-smile-content{
+    position: relative;
+    width: 100%; 
+    height: 100%;
+    padding-top: 305px;
+    padding-bottom: 200px;
 }
 
 .banner-eyes{
@@ -233,31 +354,35 @@ header{
     flex-direction: row;
     gap: 100px;
     position: absolute;
-    left: 663px;
+    left: 52%;
+    transform: translateX(-50%);
     top: 377px;
 }
 
 .banner-smile{
     display: flex;
     position: absolute;
-    left: 695.62px;
-    top: 435.9px;
+    left: 53%;
+    transform: translateX(-50%);
+    top: 438px;
+}
+
+.banner-text-content{
+    display: flex;
+    flex-direction: row;
+    gap: 711px;
 }
 
 .banner-text-left{
-    position: absolute;
-    left: 84px;
-    top: 607px;
     max-width: 362px;
     font-family: "Comfortaa", serif;
     font-weight: 400;
     font-size: 20px;
+    padding-top: 112px;
+    padding-left: 50px;
 }
 
 .banner-text-right{
-    position: absolute;
-    right: 118px;
-    top: 497px;
     max-width: 165px;
     font-family: "Comfortaa", serif;
     font-weight: 400;
@@ -265,15 +390,19 @@ header{
 }
 
 .work {
-    background-image: url('img/Shine3.svg');
-    background-repeat: no-repeat;
     width: 100%;
-    left: -315px;
-    top: 977px;
+    margin-bottom: 135px;
+    position: relative;
+    overflow: visible;
 }
 
-.work-container{
-    margin-bottom: 135px;
+.shine-work{
+    width: 1168px;
+    height: 839px;
+    position: absolute;
+    top: 80px;
+    right: 453px;
+    z-index: -2;
 }
 
 .work-title{
@@ -314,25 +443,19 @@ header{
     font-size: 18px;
 }
 
-/* .shine{
+.conf{
+    position: relative;
+    overflow: visible;
+    margin-bottom: 135px;
+}
+
+.shine-conf{
     width: 1447px;
     height: 808px;
     position: absolute;
-    top: 1782px;
-    left: 473px;
+    top: -146px;
+    right: -170px;
     z-index: -2;
-} */
-
-.conf{
-    background-image: url('img/Shine\ 2.svg');
-    background-repeat: no-repeat;
-    background-position: 170px -140px;;
-    background-size: 1447px 808px;
-}
-
-
-.conf-container{
-    margin-bottom: 135px;
 }
 
 .conf-title{
@@ -353,12 +476,19 @@ header{
 }
 
 .about {
-    background-image: url('img/Shine1.svg');
-    background-repeat: no-repeat;
+    width: 100%;
+    margin-bottom: 135px;
+    position: relative;
+    overflow: visible;
 }
 
-.about-container{
-    margin-bottom: 135px;
+.shine-about{
+    width: 1437px;
+    height: 602px;
+    position: absolute;
+    top: -30px;
+    right: 254px;
+    z-index: -2;
 }
 
 .about-title{
@@ -385,14 +515,17 @@ footer{
     padding-top: 32px;
     padding-bottom: 26px;
     border-top: #535353 1px solid;
+    position: relative;
+    overflow: visible;
 }
 
-.footer-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.footer-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    gap: 122px; 
+    justify-items: center;
     align-items: center;
-    gap: 122px;
+    margin: 0 auto; 
 }
 
 .footer-item{
@@ -412,6 +545,139 @@ footer{
 .footer-social{
     cursor: pointer;
 }
+
+
+@media (max-width: 480px) {
+    .container{
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .burger-btn {
+        display: block;
+    }
+    .menu {
+        right: -100%;
+    }
+    .menu.active {
+        right: 0;
+    }
+    .banner-text-content{
+        gap: 50px;
+    }
+    .banner-text-left{
+        font-size: 14px;
+        padding-top: 12px;
+        padding-left: 0;
+    }
+    .banner-text-right{
+        font-size: 14px;
+    }
+    .banner-container{
+        margin-bottom: 0;
+    }
+    .banner-smile-content {
+        padding-bottom: 220px;
+    }
+    .work {
+        margin-bottom: 95px;
+    }
+    .work-title{
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+    .work-item-title{
+        font-size: 20px;
+    }
+    .work-item-text{
+        font-size: 16px;
+    }
+    .shine-work{
+        top: 50px;
+        right: -300px;
+    }
+    .conf {
+        margin-bottom: 95px;
+    }
+    .conf-title{
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+    .conf-text{
+        font-size: 16px;
+    }
+    .shine-conf{
+        width: 1147px;
+        height: 508px;
+        top: -106px;
+        right: -170px;
+    }
+    .about {
+        margin-bottom: 70px;
+    }
+    .about-title{
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+    .about-text{
+        font-size: 16px;
+    }
+    .shine-about{
+        width: 1437px;
+        height: 602px;
+        top: -65px;
+        right: -280px;
+    }
+    footer{
+        padding-top: 28px;
+        padding-bottom: 22px;
+    }
+    .footer-container {
+        gap: 80px; 
+    }
+    .footer-item{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-item-link{
+        font-size: 14px;
+    }
+    .logo-img {
+        width: 31.94px;
+        height: 30.05px;
+    }
+    .logo-text {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 481px) {
+    .burger-btn {
+        display: none; 
+    }
+
+    .menu {
+        position: static; 
+        right: 0; 
+        width: auto; 
+        height: auto; 
+        display: flex;
+        flex-direction: row; 
+        justify-content: flex-start; 
+        align-items: center;
+        background-color: transparent;
+    }
+
+    .menu-item {
+        font-size: 20px; 
+        margin: 0 20px; 
+    }
+
+    .menu-close {
+        display: none; 
+    }
+}
+
+/* стриницы футера */
 
 .main-container{
     max-width: 1176px;
@@ -453,6 +719,7 @@ footer{
     padding-bottom: 29px;
 }
 
+
 .main-item-text{
     color: white;
     font-family: "Comfortaa", serif;
@@ -472,4 +739,142 @@ li{
     font-family: "Comfortaa", serif;
     font-weight: 400;
     font-size: 20px;
+}
+
+/* стриница с дашбордом */
+
+.header-dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1100px;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto; 
+}
+
+.main-dashboard {
+    background-image: url('img/Shine-main.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Comfortaa", serif;
+    color:white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.window {
+    background-color: #000000; 
+    border: 3px solid #535353;
+    margin: 20px;
+    width: 90%; 
+    max-width: 1093px; 
+    height: auto; 
+    max-height: 584px; 
+    border-radius: 30px;
+    position: relative;
+    z-index: 1; 
+}
+
+.dashboard-title {
+    margin-top: 0;
+}
+
+.chats-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #535353;
+    padding: 20px;
+}
+
+.text{
+    padding: 20px;
+}
+
+.modal-friend-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 30px;
+    width: 80%;
+    max-width: 533px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.modal-friend-title{
+    color: #390CCA;
+    font-family: "Comfortaa", serif;
+    font-weight: bold;
+    font-size: 32px;
+    padding-top: 45px;
+}
+
+.modal-friend-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.modal-friend-text{
+    color: black;
+    font-family: "Comfortaa", serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding-bottom: 60px;
+    max-width: 346px;
+    text-align: center;
+}
+
+.modal-friend-img{
+    width: 293px;
+    height: 280px;
+    padding-bottom: 39px;
+}
+
+.modal-friend-link{
+    color: #390CCA;
+    font-weight: bold;
+}
+
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Фон затемнённый */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Чтобы окно появлялось поверх всего */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
 }
