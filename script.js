@@ -51,20 +51,27 @@ document.getElementById('telegramAuthBtn').addEventListener('click', function() 
 });
 
 
-// Получаем элементы
 const burgerBtn = document.querySelector('.burger-btn');
 const menu = document.querySelector('.menu');
 const closeButton = document.querySelector('.menu-close');
 
-// Открытие бургер-меню
+// Открытие меню
 burgerBtn.addEventListener('click', function() {
-    menu.classList.add('active'); // Добавляем класс для показа меню
+    menu.classList.add('active'); 
 });
 
-// Закрытие бургер-меню
+// Закрытие меню
 closeButton.addEventListener('click', function() {
-    menu.classList.remove('active'); // Убираем класс для скрытия меню
+    menu.classList.remove('active'); 
 });
+
+// Закрытие меню при клике вне его
+document.addEventListener('click', function(event) {
+    if (!menu.contains(event.target) && !burgerBtn.contains(event.target)) {
+        menu.classList.remove('active');
+    }
+});
+
 
 
 

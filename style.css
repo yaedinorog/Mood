@@ -119,7 +119,6 @@ header{
     }
 }
 
-/* Общие стили для меню */
 header {
     position: fixed;
     width: 100%;
@@ -138,7 +137,6 @@ header {
     margin: 0 auto;
 }
 
-/* Логотип */
 .logo {
     display: flex;
     flex-direction: row;
@@ -165,11 +163,12 @@ header {
     font-style: normal;
 }
 
-.burger-btn {
+.burger-btn { 
     background-color: transparent;
     border: none;
     padding: 11px 10px;
-    display: none;
+    display: none; 
+    z-index: 1000; 
 }
 
 .burger-btn > span {
@@ -180,21 +179,11 @@ header {
     background-color: #FFF;
 }
 
-.burger-btn > span:nth-child(2) {
-    width: 16px;
-}
-
-.burger-btn > span:last-child {
-    margin-bottom: 0;
-    width: 12px;
-}
-
-/* Стиль для меню */
 .menu {
     position: fixed;
     top: 0;
-    left: -100%; /* Скрыто изначально */
-    width: 60%; /* Меню теперь будет занимать 60% ширины экрана */
+    right: -100%;
+    width: 60%; 
     height: 100%;
     background-color: #333333;
     display: flex;
@@ -206,10 +195,9 @@ header {
 }
 
 .menu.active {
-    transform: translateX(100%); /* Открываем меню с левой стороны */
+    right: 0;  
 }
 
-/* Стили для ссылок меню */
 .menu-item {
     font-family: "Comfortaa", serif;
     font-weight: 400;
@@ -219,11 +207,10 @@ header {
     cursor: pointer;
 }
 
-/* Кнопка закрытия меню */
 .menu-close {
     position: absolute;
     top: 20px;
-    right: 20px;
+    left: 20px;
     background-color: transparent;
     border: none;
     width: 32px;
@@ -231,33 +218,15 @@ header {
     cursor: pointer;
 }
 
-/* Медиа-запрос для экрана меньше 480px */
 @media (max-width: 480px) {
     .burger-btn {
         display: block;
     }
-    
-    .logo-text {
-        font-size: 28px;
-    }
-
-    .logo-img {
-        width: 32.94px;
-        height: 31.05px;
-    }
-
-    .btn {
-        padding: 5px 23px;
-        font-size: 16px;
-    }
-
-    /* Позиционирование для меню в мобильной версии */
     .menu {
-        left: -100%; /* Начинаем с того, что меню скрыто */
+        right: -100%;
     }
-
     .menu.active {
-        left: 0; /* При активации меню, оно появляется */
+        right: 0;
     }
 }
 
