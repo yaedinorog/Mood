@@ -40,11 +40,11 @@ header{
 
 .header-container {
     display: grid;
-    grid-template-columns: auto 1fr auto; /* Три колонки: логотип, меню, кнопка */
+    grid-template-columns: auto 1fr auto; 
     gap: 24px;
     align-items: center;
     justify-items: center;
-    margin: 0 auto; /* Центрируем шапку */
+    margin: 0 auto; 
 }
 
 .logo{
@@ -221,7 +221,7 @@ header {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9;
     left: 0;
     top: 0;
     width: 100%;
@@ -739,4 +739,142 @@ li{
     font-family: "Comfortaa", serif;
     font-weight: 400;
     font-size: 20px;
+}
+
+/* стриница с дашбордом */
+
+.header-dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1100px;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto; 
+}
+
+.main-dashboard {
+    background-image: url('img/Shine-main.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Comfortaa", serif;
+    color:white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.window {
+    background-color: #000000; 
+    border: 3px solid #535353;
+    margin: 20px;
+    width: 90%; 
+    max-width: 1093px; 
+    height: auto; 
+    max-height: 584px; 
+    border-radius: 30px;
+    position: relative;
+    z-index: 1; 
+}
+
+.dashboard-title {
+    margin-top: 0;
+}
+
+.chats-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #535353;
+    padding: 20px;
+}
+
+.text{
+    padding: 20px;
+}
+
+.modal-friend-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 30px;
+    width: 80%;
+    max-width: 533px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.modal-friend-title{
+    color: #390CCA;
+    font-family: "Comfortaa", serif;
+    font-weight: bold;
+    font-size: 32px;
+    padding-top: 45px;
+}
+
+.modal-friend-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.modal-friend-text{
+    color: black;
+    font-family: "Comfortaa", serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding-bottom: 60px;
+    max-width: 346px;
+    text-align: center;
+}
+
+.modal-friend-img{
+    width: 293px;
+    height: 280px;
+    padding-bottom: 39px;
+}
+
+.modal-friend-link{
+    color: #390CCA;
+    font-weight: bold;
+}
+
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Фон затемнённый */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Чтобы окно появлялось поверх всего */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
 }

@@ -72,9 +72,38 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Получаем элементы
+const copyText = document.getElementById('copyText');
+const WinWin = document.getElementById('modal');
+const closeModal = document.querySelector('.close');
 
+// Ссылка для копирования (можно использовать любую ссылку)
+const linkToCopy = "https://www.example.com";
 
+// Функция для копирования ссылки в буфер обмена
+copyText.addEventListener('click', function() {
+    // Создаём временный элемент input для копирования ссылки
+    const tempInput = document.createElement('input');
+    tempInput.value = linkToCopy;
+    document.body.appendChild(tempInput);
+    
+    // Выбираем и копируем текст
+    tempInput.select();
+    document.execCommand('copy');
+    
+    // Удаляем временный input
+    document.body.removeChild(tempInput);
+    
+    // Показываем модальное окно
+    modalWin.style.display = 'flex';
 
+    // Закрываем модальное окно через 2 секунды
+    setTimeout(function() {
+        modalWin.style.display = 'none';
+    }, 2000);
+});
 
-
-
+// Закрытие модального окна при нажатии на крестик
+closeModal.addEventListener('click', function() {
+    modalWin.style.display = 'none';
+});

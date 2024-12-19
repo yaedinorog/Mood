@@ -4,33 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header" id="header">
-        <div class="container header-container">
+        <div class="container header-dashboard-container">
             <div class="logo">
                 <a href="index.html" class="logo-link">
                     <img src="img/Logo-icon.svg" alt="logo" class="logo-img">
                     <p class="logo-text">Mood</p>
                 </a>
             </div>
+            <a href="#"><img src="img/User.svg" alt="#"></a>
         </div>
     </header>
-    <!-- <div id="myModal" class="modal">
+    <div id="myModal" class="modal">
         <div class="modal-friend-content">
             <span class="close">&times;</span>
             <h2 class="modal-friend-title">ПРИГЛАСИ ДРУГА</h2>
             <div class="modal-friend-item">
                 <img class="modal-friend-img" src="img/qr.png" alt="">
-                <p class="modal-friend-text">Пригласи друга, отсканировав QR-код или отправив ему <a href="#">ссылку</a></p>
+                <p class="modal-friend-text">Пригласи друга, отсканировав QR-код или отправив ему <span id="copyText" class="modal-friend-link">ссылку</span></p>
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Ссылка скопирована!</p>
+                    </div>
+                </div>
             </div>
-            <button id="telegramAuthBtn" class="modal-friend-btn">Войти</button>
         </div>
-    </div> -->
-    <main class="main">
+    </div>
+    <main class="main main-dashboard">
         <div class="container">
-            
+            <div class="window">
+                <div class="chats-header">
+                    <h2 class="dashboard-title">Чатики</h2>
+                    <form action="/search" method="get">
+                        <label for="search">Поиск:</label>
+                        <input type="search" id="search" name="query" placeholder="Введите запрос..." />
+                    </form>
+                    <!-- <img src="img/Search.svg" alt="#" class="search-img"> -->
+                    
+                    <button class="btn" id="openModalBtn">Бамб +</button>
+                    
+                </div>
+
+                <div id="users-container">
+                    <!-- Данные пользователей будут вставляться сюда -->
+                </div>
+
+                <p class="text">Здесь будут чаты с вашими друзья. Скоро мы это добавим...</p>
+            </div>
         </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
