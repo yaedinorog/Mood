@@ -411,7 +411,7 @@ header {
     font-family: "Comfortaa", serif;
     display: flex;
     justify-content: center;
-    margin-bottom: 78px;
+    padding-bottom: 78px;
 }
 
 .work-content{
@@ -464,7 +464,7 @@ header {
     font-family: "Comfortaa", serif;
     display: flex;
     justify-content: center;
-    margin-bottom: 78px;
+    padding-bottom: 78px;
 }
 
 .conf-text{
@@ -548,6 +548,10 @@ footer{
 
 
 @media (max-width: 480px) {
+    .container{
+        max-width: 450px;
+        margin: 0 auto;
+    }
     .burger-btn {
         display: block;
     }
@@ -556,6 +560,93 @@ footer{
     }
     .menu.active {
         right: 0;
+    }
+    .banner-text-content{
+        gap: 50px;
+    }
+    .banner-text-left{
+        font-size: 14px;
+        padding-top: 12px;
+        padding-left: 0;
+    }
+    .banner-text-right{
+        font-size: 14px;
+    }
+    .banner-container{
+        margin-bottom: 0;
+    }
+    .banner-smile-content {
+        padding-bottom: 220px;
+    }
+    .work {
+        margin-bottom: 95px;
+    }
+    .work-title{
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+    .work-item-title{
+        font-size: 20px;
+    }
+    .work-item-text{
+        font-size: 16px;
+    }
+    .shine-work{
+        top: 50px;
+        right: -300px;
+    }
+    .conf {
+        margin-bottom: 95px;
+    }
+    .conf-title{
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+    .conf-text{
+        font-size: 16px;
+    }
+    .shine-conf{
+        width: 1147px;
+        height: 508px;
+        top: -106px;
+        right: -170px;
+    }
+    .about {
+        margin-bottom: 70px;
+    }
+    .about-title{
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+    .about-text{
+        font-size: 16px;
+    }
+    .shine-about{
+        width: 1437px;
+        height: 602px;
+        top: -65px;
+        right: -280px;
+    }
+    footer{
+        padding-top: 28px;
+        padding-bottom: 22px;
+    }
+    .footer-container {
+        gap: 80px; 
+    }
+    .footer-item{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-item-link{
+        font-size: 14px;
+    }
+    .logo-img {
+        width: 31.94px;
+        height: 30.05px;
+    }
+    .logo-text {
+        font-size: 28px;
     }
 }
 
