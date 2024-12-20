@@ -44,66 +44,78 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById('telegramAuthBtn').addEventListener('click', function() {
-    // При нажатии, автоматически инициируем авторизацию через Telegram
-    const url = 'https://t.me/Mood_auth_bot?start=auth';  // Замените на ссылку к вашему боту
-    window.location.href = url;  // Перенаправляем на Telegram бот
-});
+const authButton = document.getElementById('telegramAuthBtn');
 
+  authButton.addEventListener('click', function() {
+    window.location.href = 'chats.html'; 
+  });
+
+// document.getElementById('telegramAuthBtn').addEventListener('click', function() {
+//     // При нажатии, автоматически инициируем авторизацию через Telegram
+//     const url = 'https://t.me/Mood_auth_bot?start=auth';  // Замените на ссылку к вашему боту
+//     window.location.href = url;  // Перенаправляем на Telegram бот
+// });
+
+const checkbox = document.getElementById('checkbox');
+
+function toggleButtonState() {
+    if (checkbox.checked) {
+        authButton.classList.remove('disabled');
+        authButton.classList.add('active');
+        authButton.disabled = false; 
+    } else {
+        authButton.classList.remove('active');
+        authButton.classList.add('disabled');
+        authButton.disabled = true; 
+    }
+}
+
+checkbox.addEventListener('change', toggleButtonState);
+
+toggleButtonState();
 
 const burgerBtn = document.querySelector('.burger-btn');
 const menu = document.querySelector('.menu');
 const closeButton = document.querySelector('.menu-close');
 
-// Открытие меню
 burgerBtn.addEventListener('click', function() {
     menu.classList.add('active'); 
 });
 
-// Закрытие меню
 closeButton.addEventListener('click', function() {
     menu.classList.remove('active'); 
 });
 
-// Закрытие меню при клике вне его
 document.addEventListener('click', function(event) {
     if (!menu.contains(event.target) && !burgerBtn.contains(event.target)) {
         menu.classList.remove('active');
     }
 });
 
-// Получаем элементы
 const copyText = document.getElementById('copyText');
-const WinWin = document.getElementById('modal');
-const closeModal = document.querySelector('.close');
+  const notification = document.getElementById('notification');
 
-// Ссылка для копирования (можно использовать любую ссылку)
-const linkToCopy = "https://www.example.com";
+  async function copyLink() {
+    try {
+      const link = "https://t.me/your_bot"; 
 
-// Функция для копирования ссылки в буфер обмена
-copyText.addEventListener('click', function() {
-    // Создаём временный элемент input для копирования ссылки
-    const tempInput = document.createElement('input');
-    tempInput.value = linkToCopy;
-    document.body.appendChild(tempInput);
-    
-    // Выбираем и копируем текст
-    tempInput.select();
-    document.execCommand('copy');
-    
-    // Удаляем временный input
-    document.body.removeChild(tempInput);
-    
-    // Показываем модальное окно
-    modalWin.style.display = 'flex';
+      await navigator.clipboard.writeText(link);
 
-    // Закрываем модальное окно через 2 секунды
+      showNotification();
+    } catch (err) {
+      console.error('Ошибка при копировании: ', err);
+      alert('Не удалось скопировать ссылку. Попробуйте вручную.');
+    }
+  }
+
+  function showNotification() {
+    notification.style.display = 'block'; 
     setTimeout(function() {
-        modalWin.style.display = 'none';
-    }, 2000);
-});
+      notification.style.display = 'none';
+    }, 3000); 
+  }
 
-// Закрытие модального окна при нажатии на крестик
-closeModal.addEventListener('click', function() {
-    modalWin.style.display = 'none';
-});
+  copyText.addEventListener('click', function(event) {
+    event.preventDefault();  
+    copyLink();
+  });
